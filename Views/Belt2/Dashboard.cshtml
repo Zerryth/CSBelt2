@@ -1,0 +1,34 @@
+@model CSBelt2.Models.IdeasBundle
+
+<div class="wrapper">
+    <div class="header">
+        <h1>Hi @TempData["Alias"]</h1>
+        <a asp-controller="Users" asp-action="Logout">Log off</a>
+    </div>
+    <div class="ideaFormContainer">
+        <form asp-controller="Belt2" asp-action="CreateIdea" method="POST">
+            <label asp-for="@Model.IdeaModel.Description"></label>
+            <input asp-for="@Model.IdeaModel.Description"><br>
+            <span asp-validation-for="@Model.IdeaModel.Description"></span><br>
+
+            <button type="submit">Idea!</button>
+        </form>
+    </div>
+    <hr>
+    <div class="allIdeas">
+        @foreach(var idea in @Model.AllIdeas)
+        {
+            <div class="ideaCard">
+                <p><a asp-controller="Belt2" asp-action="Profile" asp-route-userId="@idea.PosterId" class="alias">@idea.Poster.Alias</a> says: </p>
+                <div class="description">@idea.Description</div>
+                <a asp-controller="Belt2" asp-action="Like" asp-route-ideaId="@idea.IdeaId">Like</a> |
+                <a asp-controller="Belt2" asp-action="LikeStatus" asp-route-ideaId="@idea.IdeaId">@idea.UsersWhoLiked.Count people</a> like this --sort of 
+                @if(@idea.PosterId == (int)TempData["UserId"])
+                {
+                    <span>| <a asp-controller="Belt2" asp-action="Delete" asp-route-ideaId="@idea.IdeaId">Delete</a></span>
+                }
+                
+            </div>
+        }
+    </div>
+</div>

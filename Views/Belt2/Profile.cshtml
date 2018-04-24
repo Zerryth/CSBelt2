@@ -1,0 +1,17 @@
+@model CSBelt2.Models.UserBundle
+
+<div class="profileWrapper">
+    <div class="header">
+        <a asp-controller="Belt2" asp-action="Dashboard">Bright Ideas</a>
+        <a asp-controller="Users" asp-action="Logout">Log off</a>
+    </div>
+    <hr>
+    <div class="profile">
+        <h3>Name: @Model.UserModel.Name</h3>
+        <h3>Alias: @Model.UserModel.Alias</h3>
+        <h3>Email: @Model.UserModel.Email</h3>
+        <hr>
+        <h3>Total Number of Posts: @TempData["PostCount"]</h3>
+        <h3>Total Number of Likes: @Model.AllLikes.Count</h3>
+    </div>
+</div>

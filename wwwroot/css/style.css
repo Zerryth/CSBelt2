@@ -1,0 +1,65 @@
+* {
+    color: lightseagreen;
+    font-family: 'Comfortaa', cursive;
+    font-size: 20px;
+}
+button {
+    background-color: #7198dc;
+    color: white;
+    border: none;
+    padding: 8px 23px;
+    /* margin: 1% 0%  0% 60%; */
+}
+button:hover {
+    color: lightgoldenrodyellow;
+    box-shadow: 2px 2px rgb(144, 208, 238);
+}
+.emailInput {
+    margin: 10px 0px 10px 79px;
+}
+h1 {
+    font-family: 'Syncopate', sans-serif;
+    color: lightsalmon;
+}
+input {
+    margin: 10px 25px;
+    border: 2px solid lightslategray;
+    height: 38px;
+}
+.passwordInput {
+    margin: 10px 0px 10px 39px;
+}
+.red, form span {
+    color: red;
+}
+.regBtn {
+    margin: 3% 0% 4% 1%;
+}
+.registrationContainer {
+    padding: 20px;
+}
+.dashboardTable {
+    text-align: center;
+}
+.dashboardTable td {
+    padding: 5px;
+}
+.dashboardTable th {
+    color: lightskyblue;
+}
+.count {
+    width: 119px;
+}
+.description {
+    border: 2px solid rgba(69, 103, 124, 0.561);
+    width: 300px;
+    height: 100px;
+    padding: 2%;
+    margin: 1%;
+}
+.ideaCard {
+    margin: 2%;
+}
+.alias {
+    color: rgb(236, 155, 167);
+}

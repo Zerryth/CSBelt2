@@ -1,0 +1,32 @@
+@model CSBelt2.Models.Idea
+
+<div class="statusContainer">
+    <div class="header">
+        <a asp-controller="Belt2" asp-action="Dashboard">Bright Ideas</a>
+        <a asp-controller="Users" asp-action="Logout">Log off</a>
+    </div>
+    <hr>
+    <div class="likeInfoContainer">
+        <p><a asp-controller="Belt2" asp-action="Profile" asp-route-userId="@Model.PosterId">@Model.Poster.Alias</a> says: </p>
+        <div class="ideaContainer">
+            @Model.Description
+        </div>
+
+        <h4>People who liked this post:</h4>
+        <table>
+            <thead>
+                <th>Alias</th>
+                <th>Name</th>
+            </thead>
+            <tbody>
+                @foreach(KeyValuePair<string, User> user in ViewBag.DistinctUsers)
+                {
+                    <tr>
+                        <td><a asp-controller="Belt2" asp-action="Profile" asp-route-userId="@user.Value.UserId">@user.Value.Alias</a></td>
+                        <td>@user.Value.Name</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

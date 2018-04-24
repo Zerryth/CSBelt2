@@ -1,0 +1,30 @@
+@model CSBelt2.Models.RegisterViewModel;
+
+<div class="registrationContainer">
+    <form asp-controller="Users" asp-action="Register" method="POST">
+        <h1>Register</h1>
+
+        <label asp-for="Name"></label>
+        <input asp-for="Name">
+        <span asp-validation-for="Name"></span><br>
+
+        <label asp-for="Alias"></label>
+        <input asp-for="Alias">
+        <span asp-validation-for="Alias"></span><br>
+
+        <label asp-for="Email" ></label>
+        <input asp-for="Email" class="emailInput">
+        <span asp-validation-for="Email"></span><br>
+
+        <label asp-for="Password"></label>
+        <input asp-for="Password" class="passwordInput">
+        <span asp-validation-for="Password"></span><br>
+
+        <label asp-for="PasswordConfirmation"></label>
+        <input asp-for="PasswordConfirmation">
+        <span asp-validation-for="PasswordConfirmation"></span><br>
+        
+        <button type="submit" class="regBtn">Submit</button>
+    </form>
+    <a href="/login">Already Registered?</a>
+</div>

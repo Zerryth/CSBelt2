@@ -1,0 +1,20 @@
+@model CSBelt2.Models.LoginViewModel;
+
+<div class="loginContainer">
+    <form asp-controller="Users" asp-action="Login" method="POST">
+        <h1>Login</h1>
+
+        <label asp-for="LoginEmail"></label>
+        <input asp-for="LoginEmail"><br>
+        <span asp-validation-for="LoginEmail"></span><br>
+        <span asp-validation-for="EmailInDb"></span><br>
+
+        <label asp-for="LoginPassword"></label>
+        <input asp-for="LoginPassword"><br>
+        <span asp-validation-for="LoginPassword"></span><br>
+        <span asp-validation-for="LoginPasswordConfirmation"></span><br>
+
+        <button type="submit">Submit</button>
+    </form>
+    <a href="/">Need to Register?</a>
+</div>

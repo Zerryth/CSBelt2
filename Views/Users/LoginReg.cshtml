@@ -1,0 +1,12 @@
+@model CSBelt2.Models.LogRegModelBundle
+
+<div class="loginRegContainer">
+    <h1>Welcome to the Dojo Activity Center</h1>
+    <div class="loginContainer">
+        @Html.Partial("Login", @Model.Login)
+    </div>
+    <hr>
+    <div class="registrationContainer">
+        @Html.Partial("Registration", @Model.Registration)
+    </div>
+</div>
